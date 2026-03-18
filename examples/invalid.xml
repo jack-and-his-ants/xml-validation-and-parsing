@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<myrmekologia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../projekt_schema.xsd">
+	<autor>
+		<imie>jack-and-his-ants</imie>
+		<nazwisko>jack-and-his-ants</nazwisko>
+		<rok_urodzenia>2005</rok_urodzenia>
+		<numer_albumu>203435</numer_albumu>
+		<numer_telefonu>111-111-111</numer_telefonu>
+	</autor>
+    <Biologia>
+        <anatomia>
+                <czescCiala nazwa="głowa">
+                	<liczba>1</liczba>
+                	<opis>
+                		Głowa mrówek jest zawsze silnie rozwinięta, a wśród narządów gębowych specjalnie dobrze wykształcone są żuwaczki, będące głównym narządem aparatu gębowego. Oczy i przyoczka mogą być rozmaicie rozwinięte u poszczególnych gatunków, u robotnic ulegają niekiedy znacznemu uwstecznieniu. Czułki zawsze dobrze rozwinięte, najczęściej zgięte, biczykowate.
+                	</opis>
+                </czescCiala>
+                <czescCiala nazwa="tułów">
+                	<liczba>1</liczba>
+                    <opis>
+                    	Tułów o pierścieniach ściśle z sobą zespolonych, a u robotnic nawet częściowo pozlewanych.
+                    </opis>
+                </czescCiala>
+                <czescCiala nazwa="odwłok">
+                	<liczba>1</liczba>
+                    <opis>
+                    	 Odwłok ruchomo zestawiony z tułowiem, dzięki przekształceniu jednego lub dwóch pierścieni w cienki stylik. Żądła zwykle brak, gruczoł jadowy dobrze wykształcony; jad zawiera zawsze mniejsze lub większe ilości kwasu mrówkowego.
+                    </opis>
+                </czescCiala>
+        </anatomia>
+    </Biologia>
+    <StrukturaKolonii>
+        <Hierarchia>
+                <Kasta nazwa="królowa">              
+                    <opis>
+                    	Zaplemnione samice tracą skrzydła, zostają zabrane przez robotnice swego gatunku do jakiegoś istniejącego już mrowiska, lub zakładają nowe. W tym przypadku samica znosi kilkanaście jaj i sama hoduje z nich pierwsze robotnice.
+                    </opis>
+                </Kasta>
+                <Kasta nazwa="robotnica">
+                    <opis>
+                    	Większość mieszkańców mrowiska stanowią robotnice, których liczba może dochodzić do kilkuset tysięcy.
+                    </opis>      
+                </Kasta>
+                <Kasta nazwa="samiec">
+                    <ciekawostka>Po kopulacji samce giną.</ciekawostka>
+                </Kasta>    
+        </Hierarchia>
+    </StrukturaKolonii>
+	<Mrowki>
+		<mrowka podrodzina="Myrmicinae" wPolsce="tak">
+			<gatunek jezyk="pl">Wścieklica dorodna</gatunek>
+			<gatunek jezyk="lat">Manica rubida</gatunek>
+			<rok_opisania odkrywca="Latreille">oooo</rok_opisania>
+			<opis>Kolonię zakłada w sposób pół-klasztorny. Środowiskiem tej mrówki są dobrze nasłonecznione otwarte tereny górskie z ubogą roślinnością.</opis>
+			<zdjecie zrodlo="img/Mrubida.jpg">Manica rubida</zdjecie>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Wścieklica_dorodna">Manica rubida</link>
+			
+		</mrowka>
+		<mrowka podrodzina="Formicinae" wPolsce="tak">
+			<gatunek jezyk="pl">Gmachówka drzewotoczna</gatunek>
+			<gatunek jezyk="lat">Camponotus ligniperda</gatunek>
+			<rok_opisania odkrywca="Latreille">1802</rok_opisania>
+
+			<opis>Gmachówka drzewotoczna (Camponotus ligniperda) – gatunek mrówki z podrodziny Formicinae. Największa polska i europejska mrówka zamieszkującą dobrze nasłonecznione lasy, ich skraje, jak i również tereny otwarte, porośnięte krzewami. Buduje gniazda zarówno pod jak i wewnątrz próchniejących pniach drzew i dużych drzewach w części częściowo podziemnej, pod kamieniami. Wśród tych mrówek u robotnic występuje podział na kasty</opis>
+
+			<zdjecie zrodlo="img/Cligniperda.jpg">Camponotus ligniperda</zdjecie>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Gmachówka_drzewotoczna">Camponotus ligniperda</link>
+			<link zrodlo="https://insektarium.net/hymenoptera-2/formicidae-mrowkowate/camponotus-ligniperda-gmachowka-drzewotoczna/">Camponotus ligniperda</link>
+			
+		</mrowka>
+		<mrowka podrodzina="Myrmicinae" wPolsce="tak">
+			<gatunek jezyk="pl">Mrówka złodziejka</gatunek>
+			<gatunek jezyk="lat">Solenopsis fugax</gatunek>
+			<rok_opisania odkrywca="Latreille">1798</rok_opisania>
+			<opis>S. fugax jest małą mrówką często mieszkającą blisko lub wewnątrz gniazd innych gatunków mrówek i stosującą lestobiozę. Lestobioza jest formą pasożytnictwa polegającą na rabunku zapasów pożywienia oraz pożerania larw i poczwarek. W przypadku budowy samodzielnego gniazda pożywienie dostarczają jej mszyce korzeniowe.</opis>
+			<zdjecie zrodlo="img/Sfugax-2.jpg">Solenopsis fugax</zdjecie>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Mrówka_złodziejka">Solenopsis fugax</link>
+			
+		</mrowka>
+	</Mrowki>
+</myrmekologia>

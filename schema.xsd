@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:element name="myrmekologia" type="myrmekologiaType"/>
+
+
+<xs:complexType name="myrmekologiaType">
+	<xs:sequence>
+		<xs:element name="autor" type="autorType"/>
+		<xs:element name="Biologia" type="biologiaType"/>
+		<xs:element name="StrukturaKolonii">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Hierarchia" type="HierarchiaType"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="Mrowki" type="MrowkiType"/>
+
+	</xs:sequence>
+
+</xs:complexType>
+
+
+	<xs:complexType name="autorType">
+		<xs:sequence>
+			<xs:group ref="imie_i_nazwisko"/>
+			<xs:element name="rok_urodzenia">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="1900"/>
+						<xs:maxInclusive value="2024"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="numer_albumu">
+				<xs:simpleType>
+					<xs:restriction base="xs:long">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+				</xs:element>
+				<xs:element name="numer_telefonu" type="telefonType"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="HierarchiaType">
+			<xs:sequence>
+			<xs:element name="Kasta" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:element name="opis" type="opisType" />
+							<xs:element name="ciekawostka" type="ciekawostkaType" />
+						</xs:choice>
+					</xs:sequence>
+					<xs:attribute ref="nazwa" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MrowkiType">
+		<xs:sequence>
+			<xs:element name="mrowka" type="mrowkaType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="biologiaType">
+		<xs:sequence>
+			<xs:element name="anatomia">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="czescCiala" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="mrowkaType">
+		<xs:sequence>
+			<xs:element name="gatunek" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="jezyk" type="xs:string" use="required"/>
+					</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="rok_opisania">
+				<xs:complexType>
+					<xs:simpleContent>
+					<xs:extension base="xs:gYear">
+						<xs:attribute name="odkrywca" type="xs:string" use="required"/>
+					</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="opis" type="opisType"/>
+			<xs:element name="zdjecie" type="adressType" maxOccurs="unbounded"/>
+			<xs:element name="link" type="adressType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="podrodzina" type="xs:string" use="required"/>
+		<xs:attribute ref="wPolsce"/>
+	</xs:complexType>
+
+	<xs:complexType name="adressType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="zrodlo" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+		
+	<xs:element name="czescCiala">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="liczba" type="liczbaType"/>
+				<xs:element name="opis" type="opisType"/>
+			</xs:sequence>
+			<xs:attribute ref="nazwa"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="imieType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="nazwiskoType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="opisType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ciekawostkaType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="telefonType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9]{3}-[0-9]{3}-[0-9]{3})"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="liczbaType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attribute name="wPolsce">
+					<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="tak"/>
+						<xs:enumeration value="nie"/>
+					</xs:restriction>
+				</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="nazwa">
+					<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+	</xs:attribute>
+
+
+	<xs:group name="imie_i_nazwisko">
+		<xs:sequence>
+		    <xs:element name="imie" type="imieType"/>
+			<xs:element name="nazwisko" type="nazwiskoType"/>
+		</xs:sequence>
+	</xs:group>
+	
+
+</xs:schema>
